@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+import { test, expect } from '@playwright/test';
+
+test("Handling All values in Dropdown",async()=>{
+    const browser =await chromium.launch({headless:false});
+    const page = await browser.newPage();
+    await page.goto('https://www.hyrtutorials.com/p/html-dropdown-elements-practice.html');
+    await page.selectOption('select#course', { label: 'Python' });
+    await page.waitForTimeout(5000);
+    
+})
